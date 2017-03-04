@@ -1,0 +1,42 @@
+﻿@model IEnumerable<MVCClientTest.Models.ViewModels.BookVM>
+@{
+    Layout = "~/views/shared/_layout.cshtml";
+
+    ViewData["Title"] = "List of Books";
+}
+
+<div>
+    <hr /><hr />
+    <div class="row">
+        <table class="table table-condensed table-hover">
+            <tr>
+               
+                <th><a asp-controller="Home" asp-action="Index" asp-route-sort="Title">Title</a></th>
+                <th><a asp-controller="Home" asp-action="Index" asp-route-sort="Genre">Genre</a></th>
+                <th><a asp-controller="Home" asp-action="Index" asp-route-sort="PublishedOn">Published On</a></th>
+                <th><a asp-controller="Home" asp-action="Index" asp-route-sort="ISBN">ISBN</a></th>
+                <th><a asp-controller="Home" asp-action="Index" asp-route-sort="Author">Author</a></th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.Genre</td>
+                    <td>@item.PublishedOn</td>
+                    <td>@item.ISBN</td>
+                    <td>@item.Author</td>
+                    <td>
+                        <a asp-controller="Home" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-default"> Edit</a>
+                        <a asp-controller="Home" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-default"> Delete</a>
+                    </td>
+                </tr>
+            }
+        </table>
+
+        <div class="col-md-10">
+            <a asp-controller="Home" asp-action="Create" class="btn btn-default"> + Add new book</a>
+        </div>
+    </div>
+</div>

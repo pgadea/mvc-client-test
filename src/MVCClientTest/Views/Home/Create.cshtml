@@ -1,0 +1,60 @@
+﻿@model MVCClientTest.Models.ViewModels.BookVM
+@{
+    Layout = "~/views/shared/_layout.cshtml";
+
+    ViewData["Title"] = "Create";
+}
+
+<h2>@ViewData["Title"].</h2>
+<form asp-controller="Home" asp-action="Create" method="post" class="form-horizontal" role="form">
+    <h4>Create a new Book.</h4>
+    <hr />
+    <div class="form-group">
+        <label asp-for="Title" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Genre" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="Genre" class="form-control" />
+            <span asp-validation-for="Genre" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="PublishedOn" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="PublishedOn" class="form-control" />
+            <span asp-validation-for="PublishedOn" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="NoofPages" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="NoofPages" class="form-control" />
+            <span asp-validation-for="NoofPages" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="ISBN" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="ISBN" class="form-control" />
+            <span asp-validation-for="ISBN" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="AuthorName" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="AuthorName" class="form-control" />
+            <span asp-validation-for="AuthorName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <button type="submit" class="btn btn-default">Submit</button>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-default"> Cancel</a>
+        </div>
+    </div>
+</form>
